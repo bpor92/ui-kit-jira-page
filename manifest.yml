@@ -1,0 +1,23 @@
+modules:
+  jira:projectPage:
+    - key: bartekdev-hello-world-project-page
+      resource: main
+      resolver:
+        function: resolver
+      render: native
+      title: bartekdev
+  function:
+    - key: resolver
+      handler: index.handler
+resources:
+  - key: main
+    path: src/frontend/index.tsx
+app:
+  runtime:
+    name: nodejs20.x
+  id: ari:cloud:ecosystem::app/d244fe34-5dac-4eaa-b7e0-db296225817c
+permissions:
+  scopes:
+    - 'read:confluence-content.summary'
+    - 'write:jira-work'
+    - 'read:jira-work'
